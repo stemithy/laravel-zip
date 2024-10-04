@@ -1,14 +1,14 @@
 <?php
 
-namespace ZanySoft\Zip;
+namespace Stemithy\Zip;
 
 use Exception;
 
 /**
  * Multiple ZipArchive manager
  *
- * @package     ZanySoft/Zip
- * @author      ZanySof <info@zanysoft.co>
+ * @package     Stemithy/Zip
+ * @author      ZanySof <info@melloncg.com>
  * @license     MIT
  *
  */
@@ -25,11 +25,11 @@ class ZipManager
     /**
      * Add a \Coodojo\Zip\Zip object to manager
      *
-     * @param \ZanySoft\Zip\Zip $zip
+     * @param \Stemithy\Zip\Zip $zip
      *
-     * @return  \ZanySoft\Zip\ZipManager
+     * @return  \Stemithy\Zip\ZipManager
      */
-    public function addZip(\ZanySoft\Zip\Zip $zip)
+    public function addZip(\Stemithy\Zip\Zip $zip)
     {
         $this->zip_archives[] = $zip;
 
@@ -39,11 +39,11 @@ class ZipManager
     /**
      * Remove a \Coodojo\Zip\Zip object from manager
      *
-     * @param \ZanySoft\Zip\Zip $zip
+     * @param \Stemithy\Zip\Zip $zip
      *
-     * @return  \ZanySoft\Zip\ZipManager
+     * @return  \Stemithy\Zip\ZipManager
      */
-    public function removeZip(\ZanySoft\Zip\Zip $zip)
+    public function removeZip(\Stemithy\Zip\Zip $zip)
     {
         $archive_key = array_search($zip, $this->zip_archives, true);
 
@@ -77,7 +77,7 @@ class ZipManager
      *
      * @param int $zipId The zip id from self::listZips()
      *
-     * @return  \ZanySoft\Zip\Zip
+     * @return  \Stemithy\Zip\Zip
      */
     public function getZip($zipId)
     {
@@ -94,7 +94,7 @@ class ZipManager
      *
      * @param string $path
      *
-     * @return  \ZanySoft\Zip\ZipManager
+     * @return  \Stemithy\Zip\ZipManager
      */
     public function setPath($path)
     {
@@ -130,7 +130,7 @@ class ZipManager
      *
      * @param int $mask
      *
-     * @return  \ZanySoft\Zip\ZipManager
+     * @return  \Stemithy\Zip\ZipManager
      */
     public function setMask($mask)
     {
@@ -226,7 +226,7 @@ class ZipManager
         try {
             $this->extract($temporary_folder, $separate, null);
 
-            $zip = \ZanySoft\Zip\Facades\Zip::create($output_zip_file);
+            $zip = \Stemithy\Zip\Facades\Zip::create($output_zip_file);
 
             $zip->add($temporary_folder, true)->close();
 
@@ -244,7 +244,7 @@ class ZipManager
      * @param mixed $file_name_or_array filename to add or an array of filenames
      * @param bool $flatten_root_folder in case of directory, specify if root folder should be flatten or not
      *
-     * @return  \ZanySoft\Zip\ZipManager
+     * @return  \Stemithy\Zip\ZipManager
      */
     public function add($file_name_or_array, $flatten_root_folder = false)
     {
@@ -264,7 +264,7 @@ class ZipManager
      *
      * @param mixed $file_name_or_array filename to add or an array of filenames
      *
-     * @return  \ZanySoft\Zip\ZipManager
+     * @return  \Stemithy\Zip\ZipManager
      */
     public function delete($file_name_or_array)
     {

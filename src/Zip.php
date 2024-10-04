@@ -1,18 +1,18 @@
 <?php
 
-namespace ZanySoft\Zip;
+namespace Stemithy\Zip;
 
 use Exception;
 use Illuminate\Support\Str;
 use ZipArchive;
 
 /**
- * ZanySoft\Zip - ZipArchive toolbox
+ * Stemithy\Zip - ZipArchive toolbox
  *
  * This class provide methods to handle single zip archive
  *
- * @package     ZanySoft\Zip
- * @author      ZanySoft <info@zanysoft.co>
+ * @package     Stemithy\Zip
+ * @author      Stemithy <info@melloncg.com>
  * @license     MIT
  *
  */
@@ -31,7 +31,7 @@ class Zip
      *
      * @var array
      */
-    private array $supported_skip_modes = ['HIDDEN', 'ZANYSOFT', 'ALL', 'NONE'];
+    private array $supported_skip_modes = ['HIDDEN', 'STEMITHY', 'ALL', 'NONE'];
 
     /**
      * Mask for the extraction folder (if it should be created)
@@ -187,7 +187,7 @@ class Zip
     /**
      * Set files to skip
      *
-     * @param string $mode [HIDDEN, ZANYSOFT, ALL, NONE]
+     * @param string $mode [HIDDEN, STEMITHY, ALL, NONE]
      *
      * @return  Zip
      */
@@ -205,7 +205,7 @@ class Zip
     }
 
     /**
-     * Get current skip mode (HIDDEN, ZANYSOFT, ALL, NONE)
+     * Get current skip mode (HIDDEN, STEMITHY, ALL, NONE)
      *
      * @return  string
      */
@@ -541,7 +541,7 @@ class Zip
                 continue;
             }
 
-            if ($name[0] == '.' and @$name[1] == '_' and in_array($this->skip_mode, ['ZANYSOFT', 'ALL'])) {
+            if ($name[0] == '.' and @$name[1] == '_' and in_array($this->skip_mode, ['STEMITHY', 'ALL'])) {
                 continue;
             }
 
@@ -577,7 +577,7 @@ class Zip
                 return;
             }
 
-            if ($real_name[0] == '.' and @$real_name[1] == '_' and in_array($this->skip_mode, ['ZANYSOFT', 'ALL'])) {
+            if ($real_name[0] == '.' and @$real_name[1] == '_' and in_array($this->skip_mode, ['STEMITHY', 'ALL'])) {
                 return;
             }
         }

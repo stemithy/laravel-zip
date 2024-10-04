@@ -1,18 +1,18 @@
 <?php
 
-namespace ZanySoft\Zip;
+namespace Stemithy\Zip;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static \ZanySoft\Zip\Zip open($zip_file)
- * @method static \ZanySoft\Zip\Zip create($zip_file, $overwrite = false)
- * @method static \ZanySoft\Zip\Zip check($zip_file)
+ * @method static \Stemithy\Zip\Zip open($zip_file)
+ * @method static \Stemithy\Zip\Zip create($zip_file, $overwrite = false)
+ * @method static \Stemithy\Zip\Zip check($zip_file)
  */
 class ZipFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'zanysoft.zip';
+        return 'stemithy.zip';
     }
 }

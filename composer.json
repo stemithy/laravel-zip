@@ -36,21 +36,21 @@
   },
   "autoload": {
     "psr-4": {
-      "ZanySoft\\Zip\\": "src"
+      "Stemithy\\Zip\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ZanySoft\\Zip\\": "tests"
+      "Stemithy\\Zip\\": "tests"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "ZanySoft\\Zip\\ZipServiceProvider"
+        "Stemithy\\Zip\\ZipServiceProvider"
       ],
       "aliases": {
-        "Zip": "ZanySoft\\Zip\\Facades\\Zip"
+        "Zip": "Stemithy\\Zip\\Facades\\Zip"
       }
     }
   }
